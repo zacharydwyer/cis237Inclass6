@@ -29,6 +29,12 @@
                     @*The parameters are as follows: (Text)What to say, (Action)Method to call, (Controller)
                         Controller that contains the method.*@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        @*We added this link to the nav bar for accessing the cars controller*@
+                        <li>@Html.ActionLink("Cars", "Index", "Cars")</li>
+                    }
+
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
