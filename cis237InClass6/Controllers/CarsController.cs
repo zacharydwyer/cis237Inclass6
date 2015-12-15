@@ -200,5 +200,10 @@ namespace cis237InClass6.Controllers
             //fiiltering the list in the index method.
             return RedirectToAction("Index");
         }
+
+        public ActionResult Json()
+        {
+            return Json(db.Cars.ToList(), JsonRequestBehavior.AllowGet);
+        }
     }
 }
